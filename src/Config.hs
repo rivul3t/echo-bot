@@ -15,6 +15,10 @@ import System.IO (openFile, IOMode(..))
 
 -- | Gets the bot config. In any case it can provide reasonable
 -- default values.
+
+--getTelegramApi:: IO String
+--getTelegramApi = pure $ "https://api.telegram.org/YOURTOKEN/"
+
 getBotConfig :: IO EchoBot.Config
 getBotConfig = 
   pure $ EchoBot.Config

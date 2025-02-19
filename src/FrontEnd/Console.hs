@@ -12,9 +12,6 @@ where
 import qualified Data.Text as T
 import qualified Data.Text.IO as TIO
 import qualified EchoBot as Bot
---import qualified Logger (Level(..))
---import qualified Logger.Impl
---import qualified System.IO as SIO
 
 newtype Handle = Handle
   { hBotHandle :: Bot.Handle IO T.Text

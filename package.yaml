@@ -25,6 +25,9 @@ dependencies:
 - QuickCheck
 - hspec
 - unordered-containers
+- http-conduit
+- bytestring
+- aeson
 
 ghc-options:
 - -Wall

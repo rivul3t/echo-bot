@@ -9,6 +9,7 @@ import Data.IORef (modifyIORef', newIORef, readIORef)
 import qualified Data.Text as T
 import qualified EchoBot
 import qualified FrontEnd.Console
+import qualified FrontEnd.Telegram
 import qualified Logger
 import qualified Logger.Impl
 import System.IO(hClose)
@@ -20,7 +21,8 @@ main = do
     frontEnd <- Config.getFrontEndType
     case frontEnd of
       ConfigurationTypes.TelegramFrontEnd ->
-        error "Not implemented"
+        botHandle <- makeBotHandleForPlainText logHandle
+        FrontEnd.Telegram.run botHandle
       ConfigurationTypes.ConsoleFrontEnd -> do
         botHandle <- makeBotHandleForPlainText logHandle
         runConsoleFrontEnd botHandle
